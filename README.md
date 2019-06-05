@@ -1,6 +1,6 @@
 ## GenEditID
 
-https://geneditid.github.io/editID/
+[https://geneditid.github.io/editID/](https://geneditid.github.io/editID/)
 
 
 ## Welcome to GitHub Pages
