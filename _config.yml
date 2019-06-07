@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: GenEditID
-description: description here
+description: A flexible, open-access workflow to facilitate the identification of cell clones that have desirable CRISPR-Cas9-induced gene edits.
+repository: GenEditID/editID

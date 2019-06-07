@@ -1,0 +1,7 @@
+## GenEditID detailed steps
+
+- 1) To run GenEditID, first download and install the necessary packages described below. Next, open the WebApp in a web browser, which displays a homepage with fields to initiate and describe a new project. These data are loaded into the database and facilitate project and sample tracking.
+- 2) To accompany a new project, load a "data and experiment layout submission" excel (.xls) file describing the sample names, plate and well locations, barcodes, and other information. This is loaded into the database and associated with the indicated project.
+- 3) Create a folder on a local directory to deposit data files associated with the project (e.g. fastq sequencing files and all output files from amplicon and/or protein analysis).
+- 4) For sequence analysis, combine reads from fastq files by merging or joining to generate a .fqjoin.gz. file.
+- 5) The "data and experiment layout submission" form (step 2) and combined sequences (step 4) are integrated and amplicon sequences are fetched to generate a config.csv file that enables downstream analysis. Note that this requires association with a reference genome that should be loaded locally. This allows the ampli_count tool to be run to generate an amplicount.csv file, which is loaded back to the database. Sequences asssociated with each amplicon are counted and quality controlled to discard low frequency and low quality reads. ​
