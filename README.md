@@ -20,4 +20,4 @@ GenEditID is a flexible, open-access workflow to facilitate the identification o
 
 ## License
 
-MIT. See [LICENSE](LICENSE) for details.
+MIT. See [LICENSE](LICENSE.md) for details.
