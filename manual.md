@@ -25,16 +25,15 @@ cd geneditid/
 ## Step 2: Start GenEditID WebApp, and setup a project for analysis
 
 - Start GenEditID WebApp
-
 ```
 ./shell/start_webapp.sh
 ```
 
 - Go to [http://localhost:8080](http://localhost:8080)
 
-- Create a new project by filling the form on the home page of the WebApp and save it into the database by clicking on 'Create project' button.
+- Create a **new project** by filling the form on the home page of the WebApp and save it into the database by clicking on 'Create project' button.
 
-- Then click on 'edit' in the table of projects below, to upload data and experiment layout associated to this project: load project data (targets, guides and amplicons), its experiment layout, list of plates and sequencing library details from an Excel file using this ([template](https://github.com/GenEditID/editID/raw/master/data/templates/GEPXXXXX.xlsx)). Browse your computer and select the excel file corresponding to this project, then click on 'UploadData' button. This is then loaded into the database and associated with the indicated project.
+- Then click on 'edit' in the table of projects below, to **upload data and experiment layout** associated to this project: load project data (targets, guides and amplicons), its experiment layout, list of plates and sequencing library details from an Excel file using this ([template](https://github.com/GenEditID/editID/raw/master/data/templates/GEPXXXXX.xlsx)). Browse your computer and select the excel file corresponding to this project, then click on 'UploadData' button. This is then loaded into the database and associated with the indicated project.
 
 
 - Create a GEPID project folder on a local directory to store data files associated with the project (e.g. fastq sequencing files and all output files from ampli_count and/or protein analysis).
@@ -51,7 +50,9 @@ cp ~/editID/shell/ngs/* /path/to/my/data/GEPID/.
 
 ## Step 3: Fetch fastq files
 
-For sequence analysis, combine reads from fastq files by merging or joining to generate a `.fqjoin.gz` files.
+- Get all fastq files related to your project into the GEPID project folder
+
+For amplicount analysis, combine reads from fastq files by merging or joining reads to generate a `.fqjoin.gz` files.
 
 - Check sequencing information: read length PE150 or PE300
 - Combine reads
