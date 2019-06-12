@@ -1,10 +1,10 @@
 # GenEditID Setup WebApp for production
 
 
-(https://docs.pylonsproject.org/projects/pyramid/en/latest/tutorials/modwsgi/index.html)[https://docs.pylonsproject.org/projects/pyramid/en/latest/tutorials/modwsgi/index.html]
+[https://docs.pylonsproject.org/projects/pyramid/en/latest/tutorials/modwsgi/index.html](https://docs.pylonsproject.org/projects/pyramid/en/latest/tutorials/modwsgi/index.html)
 
 Once you have Apache installed, install mod_wsgi.
-(https://github.com/GrahamDumpleton/mod_wsgi)[https://github.com/GrahamDumpleton/mod_wsgi]
+[https://github.com/GrahamDumpleton/mod_wsgi](https://github.com/GrahamDumpleton/mod_wsgi)
 
 ```
 sudo yum install httpd httpd-devel
