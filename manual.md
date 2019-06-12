@@ -8,6 +8,7 @@ To run GenEditID, first download and install the necessary dependencies:
 - [Python3](https://www.python.org/downloads/)
 - [fastq-join](https://github.com/brwnj/fastq-join)
 - [seqkit](https://github.com/shenwei356/seqkit)
+- [Download Reference Genome: Homo_sapiens.GRCh38.dna.toplevel.fa.gz](ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz)
 
 NB. These tools need to be on your path to be executable.
 
@@ -36,17 +37,11 @@ cd GenEditID/
 - Then click on 'edit' in the table of projects below, to **upload data and experiment layout** associated to this project: load project data (targets, guides and amplicons), its experiment layout, list of plates and sequencing library details from an Excel file using this ([template](https://github.com/GenEditID/GenEditID/raw/master/data/templates/GEPXXXXX.xlsx)). Browse your computer and select the excel file corresponding to this project, then click on 'UploadData' button. This is then loaded into the database and associated with the indicated project.
 
 
-- Create a GEPID project folder on a local directory to store data files associated with the project (e.g. fastq sequencing files and all output files from ampli_count and/or protein analysis).
+- Create a GEPID project folder on your local disk to store data files associated with the project (e.g. fastq sequencing files and all output files from ampli_count and/or protein analysis).
 ```
 cd /path/to/my/data/
 mkdir GEPID
 ```
-
-- Copy all NGS scripts onto project folder
-```
-cp ~/GenEditID/shell/ngs/* /path/to/my/data/GEPID/.
-```
-
 
 ## Step 3: Fetch fastq files
 
@@ -72,18 +67,19 @@ For amplicount analysis, combine reads from fastq files by merging or joining re
 
 The "data and experiment layout submission" form (step 2) and combined sequences (step 4) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that should be loaded locally. This allows the `ampli_count` tool to be run to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
 
-- Extract amplicons and targets coordinates from the database using script `create_pipeline_files.py`, and config file:
+- Extract amplicons and targets coordinates from the database to produce the config file to run `ampli_count`:
+  NB. check your disk space, before unziping the reference genome `gunzip Homo_sapiens.GRCh38.dna.toplevel.fa.gz`
   ```
   cd /path/to/my/data/GEPID/
   source ~/GenEditID/venv/bin/activate
-  python ~/GenEditID/python/scripts/create_ampli_count_conf.py --project=GEPID --genome=/path/to/hsa.GRCh38_hs38d1.fa
+  geneditid_create_amplicount_config --project=GEPID --genome=Homo_sapiens.GRCh38.dna.toplevel.fa
   ```
 
-- Run [`run_ampli_count.py`](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files
+- Run [`geneditid_run_amplicount`](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files from your project directory
   ```
   cd /path/to/my/data/GEPID/
-  ./job_amplicount.sh
-  tail -f amplicount.out
+  source ~/GenEditID/venv/bin/activate
+  geneditid_run_amplicount --fastqdir=fastq/
   ```
 
 - Check results in `amplicount.csv`
@@ -91,11 +87,11 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 
 ## Step 5: Identify variants and plot results
 
-- Run [`run_variant_id.py`](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_variant_id.py) script from the project directory:
+- Run [`geneditid_run_variantid`](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_variant_id.py) script from your project directory:
   ```
   cd /path/to/my/data/GEPID/
   source ~/GenEditID/venv/bin/activate
-  python ~/GenEditID/python/scripts/run_variant_id.py
+  geneditid_run_variantid
   ```
 
 - Check results in `editid_variantid/variantid.csv` and `editid_variantid/impacts.csv` and plots
@@ -109,15 +105,14 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 ```
 cd /path/to/my/data/GEPID/
 source ~/GenEditID/venv/bin/activate
-python ~/GenEditID/python/scripts/get_sample_loc.py GEPID
-python ~/GenEditID/python/scripts/add_sample_loc.py
+geneditid_add_sample_location GEPID
 ```
 
 - Plot heatmap on plates
 ```
 cd /path/to/my/data/GEPID/
 source ~/GenEditID/venv/bin/activate
-python ~/GenEditID/python/scripts/plot_scores.py
+geneditid_plot_scores
 ```
 
 - Visualise plots
