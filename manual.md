@@ -61,7 +61,7 @@ mkdir GEPID
 
 ## Step 4: Run `ampli_count`
 
-The "data and experiment layout submission" form (step 2) and combined sequences (step 4) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that should be loaded locally. This allows the `ampli_count` tool to be run to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
+The "data and experiment layout submission" form (step 2) and combined sequences (step 3) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that should be loaded locally. This allows the `ampli_count` tool to be run to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
 
 - Extract amplicons and targets coordinates from the database to produce the config file to run `ampli_count`:
   NB. check your disk space, before unziping the reference genome `gunzip Homo_sapiens.GRCh38.dna.toplevel.fa.gz`
