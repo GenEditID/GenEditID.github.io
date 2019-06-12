@@ -1,6 +1,6 @@
 # GenEditID
 
-GenEditID is a flexible, open-access workflow to facilitate the identification of cell clones that have desirable CRISPR-Cas9-induced gene edits. It allows sample tracking, analysis and integration of multiplexed deep sequencing and protein data, and intuitive plate-based data visualisation.
+GenEditID is a flexible, open-access workflow to facilitate the identification of cell clones that have desirable CRISPR-Cas9-induced gene edits. It allows sample tracking, analysis and integration of multiplexed deep sequencing, and intuitive plate-based data visualisation.
 
 
 ## Documentation

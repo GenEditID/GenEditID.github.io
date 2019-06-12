@@ -1,38 +1,43 @@
 # GenEditID detailed steps
 
 
-## Step 1: Install dependencies
+## Step 1: Install dependencies and setup GenEditID
 
-To run GenEditID, first download and install the necessary packages described below.
+To run GenEditID, first download and install the necessary dependencies:
 
-- [`fastq-join`](https://github.com/brwnj/fastq-join)
-- [`seqkit`](https://github.com/shenwei356/seqkit)
+- [Python3](https://www.python.org/downloads/)
+- [fastq-join](https://github.com/brwnj/fastq-join)
+- [seqkit](https://github.com/shenwei356/seqkit)
 
 NB. These tools need to be on your path to be executable.
 
-
-## Step 2: Install and start GenEditID WebApp
-
-Next, clone the GitHub repo [editID](https://github.com/GenEditID/editID.git), start and open the WebApp in a web browser, which displays a homepage with fields to initiate and describe a new project. These data are loaded into the database and facilitate project and sample tracking.
-
+- Clone the GitHub repo [editID](https://github.com/GenEditID/editID.git)
 ```
-git clone https://github.com/GenEditID/editID.git
-cd editID/
-python3 -m venv venv
-source venv/bin/activate
-pip install -r python/requirements.txt
+git clone https://github.com/GenEditID/geneditid.git
+cd geneditid/
 ```
 
-- Create the database
+- Setup GenEditID
+```
+./shell/setup_geneditid.sh
+```
 
-- Start the WebApp
+## Step 2: Start GenEditID WebApp, and setup a project for analysis
 
-- To accompany a new project, load a "data and experiment layout submission" excel (.xls) file ([download template](https://github.com/GenEditID/editID/raw/master/data/templates/GEPXXXXX.xlsx)) describing the sample names, plate and well locations, barcodes, and other information. This is loaded into the database and associated with the indicated project.
+- Start GenEditID WebApp
+
+```
+./shell/start_webapp.sh
+```
+
+- Go to [http://localhost:8080](http://localhost:8080)
+
+- Create a new project by filling the form on the home page of the WebApp and save it into the database by clicking on 'Create project' button.
+
+- Then click on 'edit' in the table of projects below, to upload data and experiment layout associated to this project: load project data (targets, guides and amplicons), its experiment layout, list of plates and sequencing library details from an Excel file using this ([template](https://github.com/GenEditID/editID/raw/master/data/templates/GEPXXXXX.xlsx)). Browse your computer and select the excel file corresponding to this project, then click on 'UploadData' button. This is then loaded into the database and associated with the indicated project.
 
 
-## Step 3: Create Project folder
-
-- Create a GEPID project folder on a local directory to deposit data files associated with the project (e.g. fastq sequencing files and all output files from ampli_count and/or protein analysis).
+- Create a GEPID project folder on a local directory to store data files associated with the project (e.g. fastq sequencing files and all output files from ampli_count and/or protein analysis).
 ```
 cd /path/to/my/data/
 mkdir GEPID
@@ -44,7 +49,7 @@ cp ~/editID/shell/ngs/* /path/to/my/data/GEPID/.
 ```
 
 
-## Step 4: Fetch fastq files
+## Step 3: Fetch fastq files
 
 For sequence analysis, combine reads from fastq files by merging or joining to generate a `.fqjoin.gz` files.
 
@@ -62,7 +67,7 @@ For sequence analysis, combine reads from fastq files by merging or joining to g
   ```
 
 
-## Step 5: Run `ampli_count`
+## Step 4: Run `ampli_count`
 
 The "data and experiment layout submission" form (step 2) and combined sequences (step 4) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that should be loaded locally. This allows the `ampli_count` tool to be run to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
 
@@ -83,7 +88,7 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 - Check results in `amplicount.csv`
 
 
-## Step 6: Identify variants and plot results
+## Step 5: Identify variants and plot results
 
 - Run [`run_variant_id.py`](../python/scripts/run_variant_id.py) script from the project directory:
   ```
@@ -97,7 +102,7 @@ The "data and experiment layout submission" form (step 2) and combined sequences
   - `editid_variantid/koscores_[amplicon_id].html`
 
 
-## Step 7: Plot koscore heatmap on plates
+## Step 6: Plot koscore heatmap on plates
 
 - Retrieve sample location on plates from the database and add them onto the necessary files
 ```
