@@ -59,22 +59,24 @@ mkdir GEPID
   ~/GenEditID/shell/ngs/job_mergereads.sh
   ```
 
+All the following steps should be ran in the **GEPID project folder**:
+```
+cd /path/to/my/data/GEPID/
+source ~/GenEditID/venv/bin/activate
+```
+
 ## Step 4: Run `ampli_count`
 
 The "data and experiment layout submission" form (step 2) and combined sequences (step 3) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that should be loaded locally. This allows the `ampli_count` tool to be run to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
 
 - Extract amplicons and targets coordinates from the database to produce the config file to run `ampli_count`:
-  NB. check your disk space, before unziping the reference genome `gunzip Homo_sapiens.GRCh38.dna.toplevel.fa.gz`
+  NB. check your disk space, before unzipping the reference genome `gunzip Homo_sapiens.GRCh38.dna.toplevel.fa.gz`
   ```
-  cd /path/to/my/data/GEPID/
-  source ~/GenEditID/venv/bin/activate
   geneditid_create_amplicount_config --project=GEPID --genome=Homo_sapiens.GRCh38.dna.toplevel.fa
   ```
 
 - Run [geneditid_run_amplicount](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files from your project directory
   ```
-  cd /path/to/my/data/GEPID/
-  source ~/GenEditID/venv/bin/activate
   geneditid_run_amplicount --fastqdir=fastq/
   ```
 
@@ -85,8 +87,6 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 
 - Run [geneditid_run_variantid](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_variant_id.py) script from your project directory:
   ```
-  cd /path/to/my/data/GEPID/
-  source ~/GenEditID/venv/bin/activate
   geneditid_run_variantid
   ```
 
@@ -98,18 +98,14 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 ## Step 6: Plot koscore heatmap on plates
 
 - Retrieve sample location on plates from the database and add them onto the necessary files
-```
-cd /path/to/my/data/GEPID/
-source ~/GenEditID/venv/bin/activate
-geneditid_add_sample_location GEPID
-```
+  ```
+  geneditid_add_sample_location GEPID
+  ```
 
 - Plot heatmap on plates
-```
-cd /path/to/my/data/GEPID/
-source ~/GenEditID/venv/bin/activate
-geneditid_plot_scores
-```
+  ```
+  geneditid_plot_scores
+  ```
 
 - Visualise plots
   - `editid_variantid/heatmap_[amplicon_id].html`
