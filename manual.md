@@ -11,10 +11,10 @@ To run GenEditID, first download and install the necessary dependencies:
 
 NB. These tools need to be on your path to be executable.
 
-- Clone the GitHub repo [editID](https://github.com/GenEditID/editID.git)
+- Clone the GitHub repo [GenEditID](https://github.com/GenEditID/GenEditID.git)
 ```
-git clone https://github.com/GenEditID/geneditid.git
-cd geneditid/
+git clone https://github.com/GenEditID/GenEditID.git
+cd GenEditID/
 ```
 
 - Setup GenEditID
@@ -33,7 +33,7 @@ cd geneditid/
 
 - Create a **new project** by filling the form on the home page of the WebApp and save it into the database by clicking on 'Create project' button.
 
-- Then click on 'edit' in the table of projects below, to **upload data and experiment layout** associated to this project: load project data (targets, guides and amplicons), its experiment layout, list of plates and sequencing library details from an Excel file using this ([template](https://github.com/GenEditID/editID/raw/master/data/templates/GEPXXXXX.xlsx)). Browse your computer and select the excel file corresponding to this project, then click on 'UploadData' button. This is then loaded into the database and associated with the indicated project.
+- Then click on 'edit' in the table of projects below, to **upload data and experiment layout** associated to this project: load project data (targets, guides and amplicons), its experiment layout, list of plates and sequencing library details from an Excel file using this ([template](https://github.com/GenEditID/GenEditID/raw/master/data/templates/GEPXXXXX.xlsx)). Browse your computer and select the excel file corresponding to this project, then click on 'UploadData' button. This is then loaded into the database and associated with the indicated project.
 
 
 - Create a GEPID project folder on a local directory to store data files associated with the project (e.g. fastq sequencing files and all output files from ampli_count and/or protein analysis).
@@ -44,7 +44,7 @@ mkdir GEPID
 
 - Copy all NGS scripts onto project folder
 ```
-cp ~/editID/shell/ngs/* /path/to/my/data/GEPID/.
+cp ~/GenEditID/shell/ngs/* /path/to/my/data/GEPID/.
 ```
 
 
@@ -75,11 +75,11 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 - Extract amplicons and targets coordinates from the database using script `create_pipeline_files.py`, and config file:
   ```
   cd /path/to/my/data/GEPID/
-  source ~/editID/venv/bin/activate
-  python ~/editID/python/scripts/create_ampli_count_conf.py --project=GEPID --genome=/path/to/hsa.GRCh38_hs38d1.fa
+  source ~/GenEditID/venv/bin/activate
+  python ~/GenEditID/python/scripts/create_ampli_count_conf.py --project=GEPID --genome=/path/to/hsa.GRCh38_hs38d1.fa
   ```
 
-- Run [`run_ampli_count.py`](https://github.com/GenEditID/editID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files
+- Run [`run_ampli_count.py`](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files
   ```
   cd /path/to/my/data/GEPID/
   ./job_amplicount.sh
@@ -91,11 +91,11 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 
 ## Step 5: Identify variants and plot results
 
-- Run [`run_variant_id.py`](../python/scripts/run_variant_id.py) script from the project directory:
+- Run [`run_variant_id.py`](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_variant_id.py) script from the project directory:
   ```
   cd /path/to/my/data/GEPID/
-  source ~/editID/venv/bin/activate
-  python ~/editID/python/scripts/run_variant_id.py
+  source ~/GenEditID/venv/bin/activate
+  python ~/GenEditID/python/scripts/run_variant_id.py
   ```
 
 - Check results in `editid_variantid/variantid.csv` and `editid_variantid/impacts.csv` and plots
@@ -108,16 +108,16 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 - Retrieve sample location on plates from the database and add them onto the necessary files
 ```
 cd /path/to/my/data/GEPID/
-source ~/editID/venv/bin/activate
-python ~/editID/python/scripts/get_sample_loc.py GEPID
-python ~/editID/python/scripts/add_sample_loc.py
+source ~/GenEditID/venv/bin/activate
+python ~/GenEditID/python/scripts/get_sample_loc.py GEPID
+python ~/GenEditID/python/scripts/add_sample_loc.py
 ```
 
 - Plot heatmap on plates
 ```
 cd /path/to/my/data/GEPID/
-source ~/editID/venv/bin/activate
-python ~/editID/python/scripts/plot_scores.py
+source ~/GenEditID/venv/bin/activate
+python ~/GenEditID/python/scripts/plot_scores.py
 ```
 
 - Visualise plots
