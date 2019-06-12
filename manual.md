@@ -107,7 +107,7 @@ The "data and experiment layout submission" form (step 2) and combined sequences
   geneditid_plot_scores
   ```
 
-- Visualise plots
+- Visualise plots in your browser
   - `editid_variantid/heatmap_[amplicon_id].html`
   - `editid_variantid/heatmap_protein_expression.html` (if data available)
   - `editid_variantid/heatmap_combined_data.html` (if data available)

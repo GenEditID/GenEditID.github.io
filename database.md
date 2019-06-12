@@ -1,4 +1,4 @@
-# GenEditID database
+# GenEditID Setup Postgres Database
 
 
 ## Installing packages on a linux server
@@ -90,13 +90,14 @@ DATABASE_URI: "postgresql://gene:gene@<HOST_URL>/geneditid"
 ## Create database schema
 
 ```
-git clone https://github.com/GenEditID/editID.git
-cd editID/
-python3 -m venv venv
-source venv/bin/activate
-pip install -e python/.
+git clone https://github.com/GenEditID/GenEditID.git
+cd GenEditID/
+```
 
-python python/scripts/create_db.py
+Edit configuration file `python/dnascissors/geneditid.yml` file and use `DATABASE_URI: "postgresql://gene:gene@localhost/geneditid"`
+
+```
+./shell/setup_geneditid.sh
 ```
 
 Access the database using [DbVisualizer](http://www.dbvis.com/).
@@ -106,5 +107,5 @@ View the current [database schema](db_diagram.pdf).
 
 ## Create database schema on dedicated server
 
-- Edit configuration file `python/dnascissors/crispr.yml` file and use `DATABASE_URI: "postgresql://gene:gene@<HOST_URL>/geneditid"`
-- Run `python/scripts/create_db.py` script to create DB schema
+- Edit configuration file `python/dnascissors/geneditid.yml` file and use `DATABASE_URI: "postgresql://gene:gene@<HOST_URL>/geneditid"`
+- Run `./shell/setup_geneditid.sh` to setup GenEditID
