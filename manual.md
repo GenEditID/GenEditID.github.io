@@ -8,7 +8,7 @@ To run GenEditID, first download and install the necessary dependencies:
 - [Python3](https://www.python.org/downloads/)
 - [fastq-join](https://github.com/brwnj/fastq-join)
 - [seqkit](https://github.com/shenwei356/seqkit)
-- [Download Reference Genome: Homo_sapiens.GRCh38.dna.toplevel.fa.gz](ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz)
+- [Download Reference Genome (release 95): Homo_sapiens.GRCh38.dna.toplevel.fa.gz](ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz)
 
 NB. These tools need to be on your path to be executable.
 
