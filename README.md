@@ -5,7 +5,9 @@ GenEditID is a flexible, open-access workflow to facilitate the identification o
 
 ## Documentation
 
-- [GenEditID Manual: detailed steps](manual.md)
+[GenEditID Manual: detailed steps](manual.md)
+
+![](GenEditIDWebApp.png)
 
 
 ## Contributors
