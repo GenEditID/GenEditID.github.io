@@ -8,7 +8,6 @@ To run GenEditID, first download and install the necessary dependencies:
 - [Python3](https://www.python.org/downloads/)
 - [fastq-join](https://github.com/brwnj/fastq-join)
 - [seqkit](https://github.com/shenwei356/seqkit)
-- [Download Reference Genome (release 95): Homo_sapiens.GRCh38.dna.toplevel.fa.gz](ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz)
 
 NB. These tools need to be on your path to be executable.
 
@@ -69,8 +68,12 @@ source ~/GenEditID/venv/bin/activate
 
 The "data and experiment layout submission" form (step 2) and combined sequences (step 3) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that should be loaded locally. This allows the `ampli_count` tool to be run to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
 
+- Download Reference Genome (release 95): [Homo_sapiens.GRCh38.dna.toplevel.fa.gz](ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz) check your disk space, before unzipping the reference genome
+  ```
+  gunzip Homo_sapiens.GRCh38.dna.toplevel.fa.gz
+  ```
+
 - Extract amplicons and targets coordinates from the database to produce the config file to run `ampli_count`:
-  NB. check your disk space, before unzipping the reference genome `gunzip Homo_sapiens.GRCh38.dna.toplevel.fa.gz`
   ```
   geneditid_create_amplicount_config --project=GEPID --genome=Homo_sapiens.GRCh38.dna.toplevel.fa
   ```
