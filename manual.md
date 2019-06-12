@@ -45,23 +45,19 @@ mkdir GEPID
 
 ## Step 3: Fetch fastq files
 
-- Get all fastq files related to your project into the GEPID project folder
+- Get all fastq files related to your project into the GEPID project folder into a `fastq` folder
 
-For amplicount analysis, combine reads from fastq files by merging or joining reads to generate a `.fqjoin.gz` files.
-
-- Check sequencing information: read length PE150 or PE300
-- Combine reads
+- Combine paired-end reads by merging or joining reads to generate `.fqjoin.gz` files for ampli_count analysis:
   - Reads should be joined when target size is bigger than read length (`fastq-join` needs to be installed)
   ```
   cd /path/to/my/data/GEPID/
-  ./job_joinreads.sh
+  ~/GenEditID/shell/ngs/job_joinreads.sh
   ```
   - or merged when target size is smaller than the read length (`seqkit` needs to be installed)
   ```
   cd /path/to/my/data/GEPID/
-  ./job_mergereads.sh
+  ~/GenEditID/shell/ngs/job_mergereads.sh
   ```
-
 
 ## Step 4: Run `ampli_count`
 
@@ -75,7 +71,7 @@ The "data and experiment layout submission" form (step 2) and combined sequences
   geneditid_create_amplicount_config --project=GEPID --genome=Homo_sapiens.GRCh38.dna.toplevel.fa
   ```
 
-- Run [`geneditid_run_amplicount`](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files from your project directory
+- Run [geneditid_run_amplicount](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files from your project directory
   ```
   cd /path/to/my/data/GEPID/
   source ~/GenEditID/venv/bin/activate
@@ -87,7 +83,7 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 
 ## Step 5: Identify variants and plot results
 
-- Run [`geneditid_run_variantid`](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_variant_id.py) script from your project directory:
+- Run [geneditid_run_variantid](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_variant_id.py) script from your project directory:
   ```
   cd /path/to/my/data/GEPID/
   source ~/GenEditID/venv/bin/activate
