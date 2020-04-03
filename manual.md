@@ -66,16 +66,17 @@ source ~/GenEditID/venv/bin/activate
 
 ## Step 4: Run `ampli_count`
 
-The "data and experiment layout submission" form (step 2) and combined sequences (step 3) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that should be loaded locally. This allows the `ampli_count` tool to be ran to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
+The "data and experiment layout submission" form (step 2) and combined sequences (step 3) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that is in `data/reference/` folder. This allows the `ampli_count` tool to be ran to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
 
-- Download Reference Genome (release 95): [Homo_sapiens.GRCh38.dna.toplevel.fa.gz](ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz) check your disk space, before unzipping the reference genome
+- The Reference Genome (release 95): [Homo_sapiens.GRCh38.dna.toplevel.fa.gz](ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz) is stored in `GenEditID/data/reference/` and has been compressed using `bgzip`. If you wish to work with another reference, please download, uncompress, and re-compress it with bgzip utility from samtools [htslib-1.10.2](https://github.com/samtools/htslib/releases/download/1.10.2/htslib-1.10.2.tar.bz2)
   ```
   gunzip Homo_sapiens.GRCh38.dna.toplevel.fa.gz
+  bgzip < /Volumes/CRUKCI_HDCLONE/Homo_sapiens.GRCh38.dna.toplevel.fa > Homo_sapiens.GRCh38.dna.toplevel.fa.gz
   ```
 
 - Extract amplicons and targets coordinates from the database to produce the config file to run `ampli_count`:
   ```
-  geneditid_create_amplicount_config --project=GEPID --genome=Homo_sapiens.GRCh38.dna.toplevel.fa
+  geneditid_create_amplicount_config --project=GEPID --genome=/path/to/GenEditID/data/reference/Homo_sapiens.GRCh38.dna.toplevel.fa.gz
   ```
 
 - Run [geneditid_run_amplicount](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files from your project directory
