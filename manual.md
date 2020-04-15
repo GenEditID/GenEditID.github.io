@@ -9,7 +9,20 @@ To run GenEditID, first download and install the necessary dependencies:
 - [fastq-join](https://github.com/brwnj/fastq-join)
 - [seqkit](https://github.com/shenwei356/seqkit)
 
-NB. These tools need to be on your path to be executable.
+NB. These tools need to be on your path to be executable. Due to the improved gatekeeper on macOS Catalina the system settings might have to be changed to allow program installation. If installation is blocked follow these steps:
+
+- In terminal type the following command syntax
+```
+sudo spctl --master-disable
+```
+
+- Authenticate with your admin password. 
+- Go into your System preferences and choose 'Security & Privacy'. Tap the lock at the bottom left of the screen.
+- Enter your password to unlock Security and Privacy.
+- Choose 'Anywhere' under 'Allow apps downloaded from'.
+- Click again on the lock to keep the changes.
+
+Now you can clone the GitHub repo and set up the GenEditID webapp.
 
 - Clone the GitHub repo [GenEditID](https://github.com/GenEditID/GenEditID.git)
 ```
@@ -33,10 +46,12 @@ cd GenEditID/
 
 - Create a **new project** by filling the form on the home page of the WebApp and save it into the database by clicking on 'Create project' button.
 
-- Then click on 'edit' in the table of projects below, to **upload data and experiment layout** associated to this project: load project data (targets, guides and amplicons), its experiment layout, list of plates and sequencing library details from an Excel file using this ([template](https://github.com/GenEditID/GenEditID/raw/master/data/templates/GEPXXXXX.xlsx)). Browse your computer and select the excel file corresponding to this project, then click on 'UploadData' button. This is then loaded into the database and associated with the indicated project.
+- Then click on 'edit' in the table of projects below, to **upload data and experiment layout** associated to this project: load project data (targets, guides and amplicons), its experiment layout, list of plates and sequencing library details from an Excel file using this ([template](https://github.com/GenEditID/GenEditID/raw/master/data/templates/GEPXXXXX.xlsx)). Browse your computer and select the excel file corresponding to this project, then click on 'UploadData' button. This is then loaded into the database and associated with the indicated project. 
+
+- GEPIDs (starting with GEP and ending in five digits) are unique identifiers of individual projects. They are listed in the **projects** table and will be referred to throughout the analysis.  
 
 
-- Create a GEPID project folder on your local disk to store data files associated with the project (e.g. fastq sequencing files and all output files from ampli_count and/or protein analysis).
+- Create a GEPID folder on your local disk to store data files associated with the project (e.g. fastq sequencing files and all output files from ampli_count and/or protein analysis). Replace /path/to/my/data with the path to the directory you want to create the GEPID folder in.
 ```
 cd /path/to/my/data/
 mkdir GEPID
@@ -44,7 +59,7 @@ mkdir GEPID
 
 ## Step 3: Fetch fastq files
 
-- Get all fastq files related to your project into the GEPID project folder into a `fastq` folder
+- Get all fastq files related to your project into the GEPID project folder containing a `fastq` folder. In the code, replace /path/to/my/data/GEPID with the path to the directory where the GEPID folder is located. 
 
 - Combine paired-end reads by merging or joining reads to generate `.fqjoin.gz` files for ampli_count analysis:
   - Reads should be joined when target size is bigger than read length (`fastq-join` needs to be installed)
@@ -74,12 +89,12 @@ The "data and experiment layout submission" form (step 2) and combined sequences
   bgzip < /Volumes/CRUKCI_HDCLONE/Homo_sapiens.GRCh38.dna.toplevel.fa > Homo_sapiens.GRCh38.dna.toplevel.fa.gz
   ```
 
-- Extract amplicons and targets coordinates from the database to produce the config file to run `ampli_count`:
+- Extract amplicons and targets coordinates from the database to produce the config file to run `ampli_count`. In the code, replace 'GEPID' with your GEPID from the the 'projects' table in the webapp. Replace /path/to/ with the path to the directory where GenEditID/data/reference/Homo_sapiens.GRCh38.dna.toplevel.fa.gz is located. 
   ```
   geneditid_create_amplicount_config --project=GEPID --genome=/path/to/GenEditID/data/reference/Homo_sapiens.GRCh38.dna.toplevel.fa.gz
   ```
 
-- Run [geneditid_run_amplicount](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files from your project directory
+- Run [geneditid_run_amplicount](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files from your project directory. Replace fastq/ with the path to the directory the fastq files are located in. 
   ```
   geneditid_run_amplicount --fastqdir=fastq/
   ```
@@ -101,7 +116,7 @@ The "data and experiment layout submission" form (step 2) and combined sequences
 
 ## Step 6: Plot koscore heatmap on plates
 
-- Retrieve sample location on plates from the database and add them onto the necessary files
+- Retrieve sample location on plates from the database and add them onto the necessary files. Replace GEPID with the GEPID from the 'projects' table in the webapp.
   ```
   geneditid_add_sample_location GEPID
   ```
