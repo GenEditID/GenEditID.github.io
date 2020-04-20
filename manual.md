@@ -29,6 +29,18 @@ Now you can clone the GitHub repo and set up the GenEditID webapp.
 git clone https://github.com/GenEditID/GenEditID.git
 cd GenEditID/
 ```
+- Download Git LFS from https://git-lfs.github.com/. Install using either Homebrew
+```
+brew install git-lfs
+```
+or MacPorts
+```
+port install git-lfs
+```
+Set up Git LFS by running
+```
+git lfs install
+```
 
 - Setup GenEditID
 ```
