@@ -3,41 +3,24 @@
 
 ## Step 1: Install dependencies and setup GenEditID
 
-To run GenEditID, first download and install the necessary dependencies:
-
+To run GenEditID, first download and install the dependencies:
 - [Python3](https://www.python.org/downloads/)
 - [fastq-join](https://github.com/brwnj/fastq-join)
 - [seqkit](https://github.com/shenwei356/seqkit)
+- [Git LFS](https://git-lfs.github.com/)
+- **Note** - *These tools need to be on your path and executable.*
+- Here are some platform specific instructions:
+  - [Specific help for macOS](macos.md)
+  - [Specific help for Windows](windows.md)
 
-NB. These tools need to be on your path to be executable. Due to the improved gatekeeper on macOS Catalina the system settings might have to be changed to allow program installation. If installation is blocked follow these steps:
-
-- In terminal type the following command syntax
-```
-sudo spctl --master-disable
-```
-
-- Authenticate with your admin password.
-- Go into your System preferences and choose 'Security & Privacy'. Tap the lock at the bottom left of the screen.
-- Enter your password to unlock Security and Privacy.
-- Choose 'Anywhere' under 'Allow apps downloaded from'.
-- Click again on the lock to keep the changes.
-
-Now you can clone the GitHub repo and set up the GenEditID webapp.
+Now clone the GitHub repo and set up the GenEditID webapp.
 
 - Clone the GitHub repo [GenEditID](https://github.com/GenEditID/GenEditID.git)
 ```
 git clone https://github.com/GenEditID/GenEditID.git
 cd GenEditID/
 ```
-- Download Git LFS from https://git-lfs.github.com/. Install using either Homebrew
-```
-brew install git-lfs
-```
-or MacPorts
-```
-port install git-lfs
-```
-Set up Git LFS by running
+- Setup [Git LFS](https://git-lfs.github.com/) for supporting the usage of large files
 ```
 git lfs install
 ```
@@ -92,7 +75,7 @@ source ~/GenEditID/venv/bin/activate
 
 ## Step 4: Run `ampli_count`
 
-The "data and experiment layout submission" form (step 2) and combined sequences (step 3) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that is in `data/reference/` folder. This allows the `ampli_count` tool to be ran to generate an `amplicount.csv` file, which is loaded back to the database. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
+The "data and experiment layout submission" form (step 2) and combined sequences (step 3) are integrated and amplicon sequences are fetched to generate a `amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that is in `data/reference/` folder. This allows the `ampli_count` tool to be ran to generate an `amplicount.csv` file. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
 
 - The Reference Genome (release 95): [Homo_sapiens.GRCh38.dna.toplevel.fa.gz](ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz) is stored in `GenEditID/data/reference/` and has been compressed using `bgzip`. If you wish to work with another reference, please download, uncompress, and re-compress it with bgzip utility from samtools [htslib-1.10.2](https://github.com/samtools/htslib/releases/download/1.10.2/htslib-1.10.2.tar.bz2)
 ```
