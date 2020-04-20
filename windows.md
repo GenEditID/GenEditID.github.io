@@ -1,13 +1,16 @@
 ## Step 1: Install dependencies and setup GenEditID
- 
-### Specific help for Windows
-Install windows subsystem for Linux(WSL) - Ubuntu on windows10 - Enable windows subsytem for linux option in the settings.
-Access the local directory via ubuntu - check the mounted on pathway
-<df -h>
-For e.g. c drive - /mnt/c
-Get the fq.gz files(6 files - google drive) in GEP00009 project folder under fastq subfolder. 
-And find out the pathway for project folder.
- 
+
+### Specific help for Windows 10
+
+- Install [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get Ubuntu running on Windows 10 by enabling WSL option in the settings
+
+- Go to the Ubuntu terminal and install the dependencies
+
+- Access local Windows directories from Ubuntu
+  - check how it is mounted using `df -h` e.g. `C:` drive is `/mnt/c` in Ubuntu
+
+- Get the fastq `*.fq.gz` files into the project folder under `fastq` subfolder, and find the path to the project folder ti be used in the analysis.
+
 
 ### Back to the main manual
 [GenEditID Manual: detailed steps](manual.md)
