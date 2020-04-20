@@ -60,7 +60,7 @@ mkdir GEPID
 
 - Get all fastq files related to your project into the GEPID project folder containing a `fastq` folder. In the code, replace `/path/to/my/data/GEPID` with the path to the directory where the GEPID folder is located.
 
-- Combine paired-end reads by merging or joining reads to generate `.fqjoin.gz` files for ampli_count analysis:
+- Combine paired-end reads by merging or joining reads to generate `.fqjoin.gz` files for ampli_count analysis. File formats for paired-end reads should end in `*.s_1.r_1.fq.gz` and `*.s_1.r_2.fq.gz`.
   - Reads should be joined when target size is bigger than read length (`fastq-join` needs to be installed)
   ```
   cd /path/to/my/data/GEPID/
