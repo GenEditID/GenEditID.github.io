@@ -11,7 +11,7 @@ To run GenEditID, first download and install the dependencies:
 - **Note** - *These tools need to be on your path and executable.*
 - Here are some platform specific instructions:
   - [Specific help for macOS](macos.md)
-  - [Specific help for Windows](windows.md)
+  - [Specific help for Windows 10](windows.md)
 
 Now clone the GitHub repo and set up the GenEditID webapp.
 
