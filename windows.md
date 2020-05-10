@@ -1,4 +1,4 @@
-## Step 1: Install dependencies and setup GenEditID
+## Install dependencies and setup GenEditID
 
 ### Specific help for Windows 10
 
