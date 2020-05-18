@@ -97,7 +97,7 @@ cd GenEditID/
 Edit configuration file `python/dnascissors/geneditid.yml` file and use `DATABASE_URI: "postgresql://gene:gene@localhost/geneditid"`
 
 ```
-./shell/setup_geneditid.sh
+./scripts/setup_geneditid.sh
 ```
 
 Access the database using [DbVisualizer](http://www.dbvis.com/).
@@ -108,4 +108,4 @@ View the current [database schema](db_diagram.pdf).
 ## Create database schema on dedicated server
 
 - Edit configuration file `python/dnascissors/geneditid.yml` file and use `DATABASE_URI: "postgresql://gene:gene@<HOST_URL>/geneditid"`
-- Run `./shell/setup_geneditid.sh` to setup GenEditID
+- Run `./scripts/setup_geneditid.sh` to setup GenEditID

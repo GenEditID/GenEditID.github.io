@@ -27,7 +27,7 @@ git lfs install
 
 - Setup GenEditID
 ```
-./shell/setup_geneditid.sh
+./scripts/setup_geneditid.sh
 ```
 
 
@@ -35,7 +35,7 @@ git lfs install
 
 - Start GenEditID WebApp
 ```
-./shell/start_webapp.sh
+./scripts/start_webapp.sh
 ```
 
 - Go to [http://localhost:8080](http://localhost:8080)
@@ -57,12 +57,12 @@ git lfs install
   - Reads should be joined when target size is bigger than read length (`fastq-join` needs to be installed)
   ```
   cd GenEditID/PROJECTS/GEPID
-  ~/GenEditID/shell/ngs/job_joinreads.sh
+  ~/GenEditID/scripts/run_joinreads.sh
   ```
   - or merged when target size is smaller than the read length (`seqkit` needs to be installed)
   ```
   cd GenEditID/PROJECTS/GEPID
-  ~/GenEditID/shell/ngs/job_mergereads.sh
+  ~/GenEditID/scripts/run_mergereads.sh
   ```
 
 
@@ -71,7 +71,7 @@ git lfs install
 The project "data and layout" spreadsheet (step 1) has been loaded and the combined paired-end reads generated (step 2). Amplicon sequences uploaded are used to automatically generate an `GenEditID/PROJECTS/GEPID/amplicount_config.csv` file that enables downstream analysis. Note that this requires association with a reference genome that is in the `GenEditID/data/reference/` folder ([detailed information about the reference genome files](ref-genome.md)). This allows the `ampli_count` tool to be ran which will generate an `amplicount.csv` file. Sequences associated with each amplicon are counted and quality controlled to discard low frequency and low quality reads.
 
 
-- Run [geneditid_run_amplicount](https://github.com/GenEditID/GenEditID/blob/master/python/scripts/run_ampli_count.py) script on all fasta files from your project directory. Replace `GEPID` with the identifier of the project.
+- Run [geneditid_run_amplicount](https://github.com/GenEditID/GenEditID/blob/master/python/geneditidtools/run_ampli_count.py) script on all fasta files from your project directory. Replace `GEPID` with the identifier of the project.
 ```
 cd GenEditID/
 source venv/bin/activate
