@@ -76,7 +76,7 @@ The project "data and layout" spreadsheet (step 1) has been loaded and the combi
 cd GenEditID/
 source venv/bin/activate
 cd PROJECTS/GEPID
-geneditid_run_amplicount --fastqdir=fastq/
+geneditid_run_amplicount
 ```
 
 
