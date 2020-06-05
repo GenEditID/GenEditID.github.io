@@ -12,5 +12,5 @@
 - Get the fastq `*.fq.gz` files into the project folder under `fastq` subfolder, and find the path to the project folder to be used in the analysis.
 
 
-### Back to the main manual
+### :house: Back to the main manual
 [GenEditID Manual: detailed steps](manual.md)

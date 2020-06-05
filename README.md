@@ -15,8 +15,13 @@ GenEditID is a flexible, open-access workflow to facilitate the identification o
 - Ruben Alvarez [@rubenalv](https://github.com/rubenalv)
 - Rich Bowers [@rich7409](https://github.com/rich7409)
 - Chandu Chilamakuri [@chilamakuricsreddy](https://github.com/chilamakuricsreddy)
+- Iman Mali [@im483](https://github.com/im483)
+- Florian Merkel [Merkel Lab](http://www.merklelab.org/)
 - Anne Pajon [@pajanne](https://github.com/pajanne)
 - Amy Smith [@smith04](https://github.com/smith04)
+- Anemie Siegert [@Annemuh](https://github.com/Annemuh)
+- Loraine Tung
+
 
 
 ## License

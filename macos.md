@@ -13,5 +13,5 @@ sudo spctl --master-disable
 - Choose 'Anywhere' under 'Allow apps downloaded from'.
 - Click again on the lock to keep the changes.
 
-### Back to the main manual
+### :house: Back to the main manual
 [GenEditID Manual: detailed steps](manual.md)

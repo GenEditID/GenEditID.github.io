@@ -8,5 +8,5 @@ gunzip Homo_sapiens.GRCh38.dna.toplevel.fa.gz
 bgzip < Homo_sapiens.GRCh38.dna.toplevel.fa > Homo_sapiens.GRCh38.dna.toplevel.fa.gz
 ```
 
-### Back to the main manual
+### :house: Back to the main manual
 [GenEditID Manual: detailed steps](manual.md)

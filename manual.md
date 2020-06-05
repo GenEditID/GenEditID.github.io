@@ -1,8 +1,6 @@
 # GenEditID detailed steps
 
 
-## :memo: Install dependencies and setup GenEditID
-
 This only needs to be done once. To run GenEditID, first download and install the dependencies:
 - [Python3](https://www.python.org/downloads/)
 - [fastq-join](https://github.com/brwnj/fastq-join)
@@ -91,6 +89,10 @@ geneditid_run_amplicount
     - `GenEditID/PROJECTS/GEPID/geneditid_plots/heatmap.html`
     - `GenEditID/PROJECTS/GEPID/geneditid_plots/heatmap_protein_expression.html` (if data available)
     - `GenEditID/PROJECTS/GEPID/geneditid_plots/heatmap_combined_data.html` (if data available)
+
+## :microscope: Trying with real data
+
+[Detailed steps for testing with real data](testing.md)
 
 
 ## :speech_balloon: Ask a question
