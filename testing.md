@@ -35,6 +35,14 @@ cd GenEditID/PROJECTS/GEPID
 mv ../SRP198941/*.fq.gz fastq/.
 ```
 
+Combine paired-end reads by merging reads to generate `.fqjoin.gz` files for ampli_count analysis (`seqkit` needs to be installed).
+
+```
+cd GenEditID/PROJECTS/GEPID
+~/GenEditID/scripts/run_mergereads.sh
+```
+
+
 ### :three: Run `ampli_count` analysis
 
 ```

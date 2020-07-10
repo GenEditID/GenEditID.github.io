@@ -82,7 +82,7 @@ geneditid_run_amplicount
 
 - View the output of the analysis in the output result file `GenEditID/PROJECTS/GEPID/amplicount.csv`
 
-- Generate and visualise plots in the GenEditID WebApp [http://localhost:8080](http://localhost:8080). Click on the 'GEPID' of the project in the table of projects on the home page and navigate to the Reads, Variants and Scores tabs. Plot and results files are generated and stored in the project folder for convenience:
+- Generate and visualise plots in the GenEditID WebApp [http://localhost:8080](http://localhost:8080). Click on the 'GEPID' of the project in the table of projects on the home page and navigate to the Reads, Variants and Scores tabs. Plot and results files are stored in the project folder for convenience after being visualised in the WebApp, triggering their generation on disk:
   - Read coverage: `GenEditID/PROJECTS/GEPID/geneditid_plots/coverage.html`
   - Variants impact frequency: `GenEditID/PROJECTS/GEPID/geneditid_plots/koscores.html`
   - Scores on plate:
