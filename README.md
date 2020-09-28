@@ -18,7 +18,7 @@ GenEditID is a flexible, open-access workflow to facilitate the identification o
 - Iman Mali [@im483](https://github.com/im483)
 - Florian Merkel [Merkel Lab](http://www.merklelab.org/)
 - Anne Pajon [@pajanne](https://github.com/pajanne)
-- Amy Smith [@smith04](https://github.com/smith04)
+- Anna-Maria Smith [@smith04](https://github.com/smith04)
 - Anemie Siegert [@Annemuh](https://github.com/Annemuh)
 - Loraine Tung
 
