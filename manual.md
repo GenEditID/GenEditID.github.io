@@ -16,9 +16,8 @@ To run GenEditID, first download and install these dependencies using [bioconda]
   curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
   sh Miniconda3-latest-Linux-x86_64.sh
   ```
-
-  **For changes to take effect, close and re-open your current shell.**
-
+  - **For changes to take effect, close and re-open your current shell.**
+  
 2. Set up the channels, **it is important to add them in this order**, so that the priority is set correctly (that is, conda-forge is highest priority).
   ```
   conda config --add channels defaults
