@@ -76,7 +76,7 @@ Replace `GEP00001` with the identifier of this project.
   - Targeted search: `GenEditID/PROJECTS/GEPID/geneditid_plots/targeted_search.html`
 
 
-### :memo: Two more real data projects to analyse SRP199742_SLX15026_GEP00009 and SRP199742_SLX15025_GEP00010 if you wish
+### :memo: Two other real data projects to analyse if you wish
 
 - To analyse project **SRP199742_SLX15026_GEP00009**, use this submission spreadsheet [`data/submission_spreadsheets/SRP199742_SLX15026_GEP00009.xlsx`](https://github.com/GenEditID/GenEditID/raw/master/data/submission_spreadsheets/SRP199742_SLX15026_GEP00009.xlsx), download the fastq files using `./scripts/get_data_SRP199742_SLX15026_GEP00009.sh` and go to the `cd PROJECTS/SRP199742_GEP00009` project to combine paired-end reads.
 
