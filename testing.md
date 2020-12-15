@@ -33,7 +33,7 @@ if not, activate it using `conda activate geneditid` before running the next ste
 
 ### :two: Download and prepare fastq files
 
-Download the public fastq files:
+While waiting for the submission spreadsheet to load, open a new terminal and download the public fastq files. Don't forget to activate conda's environment using `conda activate geneditid` before merging the reads.
 ```
 cd ~/GenEditID/
 ./scripts/get_data_SRP198941_SLX15021_GEP00005.sh
