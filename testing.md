@@ -42,7 +42,7 @@ cd ~/GenEditID/
 All the fastq files related to this project will be stored in the `PROJECTS/SRP198941` folder. Combine paired-end reads by merging reads to generate `.fqjoin.gz` files for `amplicount` analysis (`seqkit` needs to be installed).
 
 ```
-cd PROJECTS/SRP198941
+cd PROJECTS/SRP198941_GEP00005
 ../../scripts/run_mergereads.sh
 ```
 
