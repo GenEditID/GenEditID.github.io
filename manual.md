@@ -17,7 +17,7 @@ To run GenEditID, first download and install these dependencies using [bioconda]
   sh Miniconda3-latest-Linux-x86_64.sh
   ```
   - **For changes to take effect, close and re-open your current shell.**
-  
+
 2. Set up the channels, **it is important to add them in this order**, so that the priority is set correctly (that is, conda-forge is highest priority).
   ```
   conda config --add channels defaults
@@ -50,6 +50,11 @@ The active environment, **the one you are currently using**, is shown in parenth
 (geneditid) $
 ```
 if not, activate it using `conda activate geneditid` before running the next steps.
+
+
+## :microscope: Trying with real data
+
+[Detailed steps for testing with real data](testing.md)
 
 
 ## :one: Start GenEditID WebApp, and setup a project for analysis
@@ -112,11 +117,6 @@ Turn off sleep mode on your computer for analysis to run smoothly.
   - Variants impact frequency: `GenEditID/PROJECTS/GEPID/geneditid_plots/impacts.html`
   - Scores on plate: `GenEditID/PROJECTS/GEPID/geneditid_plots/koscores.html`
   - Targeted search: `GenEditID/PROJECTS/GEPID/geneditid_plots/targeted_search.html` (if targeted search submitted)
-
-
-## :microscope: Trying with real data
-
-[Detailed steps for testing with real data](testing.md)
 
 
 ## :speech_balloon: Ask a question
