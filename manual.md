@@ -45,7 +45,7 @@ To run GenEditID, first download and install these dependencies using [bioconda]
   ```
   :warning: Due to large reference genomes files within the repository, the cloning step takes few minutes. Please wait till it completes before moving forward, thanks for your patience.
 
-The active environment, **the one you are currently using**, is shown in parentheses () or brackets [] at the beginning of your command prompt.
+The **active environment you are currently using** is shown in parentheses () or brackets [] at the beginning of your command prompt.
 ```
 (geneditid) $
 ```
@@ -54,7 +54,8 @@ if not, activate it using `conda activate geneditid` before running the next ste
 
 ## :microscope: Trying with real data
 
-[Detailed steps for testing with real data](testing.md)
+- [Detailed steps for testing with real data subset](demo.md)
+- [Detailed steps for testing with real data](testing.md): the full analysis will take more than four hours on a laptop
 
 
 ## :one: Start GenEditID WebApp, and setup a project for analysis
