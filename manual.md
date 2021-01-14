@@ -25,9 +25,9 @@ To run GenEditID, first download and install these dependencies using [bioconda]
   conda config --add channels conda-forge
   ```
 
-3. Install our dependencies: [fastq-join](https://github.com/brwnj/fastq-join), [seqkit](https://github.com/shenwei356/seqkit) and [Git LFS](https://git-lfs.github.com/) into a specific conda environment called `geneditid`.
+3. Install our dependencies: [pear](https://www.h-its.org/software/pear-paired-end-read-merger/), [seqkit](https://github.com/shenwei356/seqkit) and [Git LFS](https://git-lfs.github.com/) into a specific conda environment called `geneditid`.
   ```
-  conda create -n geneditid python=3.8 fastq-join seqkit git-lfs
+  conda create -n geneditid python=3.8 pear seqkit git-lfs
   ```
   To activate this environment, use `conda activate geneditid`.
   To deactivate an active environment, use `conda deactivate`.
