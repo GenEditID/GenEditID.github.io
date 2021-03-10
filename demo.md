@@ -19,7 +19,7 @@ cd ~/GenEditID/
 
 - Go to [http://localhost:8080](http://localhost:8080)
 
-- Create a **new project**, note the `GEPID`
+- Create a **new project**, note the `GEPID`, if it is your first project it will be `GEP00001`.
 
 - Upload the **submission spreadsheet** associated to this project
 
@@ -58,7 +58,7 @@ mv *.fqjoin.gz ../GEP00001/fastq/.
 ```
 cd ~/GenEditID
 source venv/bin/activate
-cd PROJECTS/GEPID
+cd PROJECTS/GEP00001
 geneditid_run_amplicount
 ```
 Replace `GEPID` with the identifier of this project.
@@ -66,13 +66,18 @@ Replace `GEPID` with the identifier of this project.
 
 ### :four: Visualise results
 
-- View the output of the analysis in the output result file `GenEditID/PROJECTS/GEPID/amplicount.csv`
+- View the output of the analysis in the output result file `GenEditID/PROJECTS/GEP00001/amplicount.csv`
+
+- Restart GenEditID WebApp: first stop the WebApp started previously by typing **Ctrl-C** in the terminal where it was ran, and re-run
+```
+./scripts/start_webapp.sh
+```
 
 - Generate and visualise plots in the GenEditID WebApp [http://localhost:8080](http://localhost:8080). Click on the 'GEPID' of the project in the table of projects on the home page and navigate to the Reads, Variants and Scores tabs. After loading the spreadsheet, you need to return to the home page and click on the 'GEPID' of the project to generate the plots. Plot and results files are generated and stored in the project folder for convenience:
-  - Read coverage: `GenEditID/PROJECTS/GEPID/geneditid_plots/coverage.html`
-  - Variants impact frequency: `GenEditID/PROJECTS/GEPID/geneditid_plots/impacts.html`
-  - Scores on plate: `GenEditID/PROJECTS/GEPID/geneditid_plots/koscores.html`
-  - Targeted search: `GenEditID/PROJECTS/GEPID/geneditid_plots/targeted_search.html`
+  - Read coverage: `GenEditID/PROJECTS/GEP00001/geneditid_plots/coverage.html`
+  - Variants impact frequency: `GenEditID/PROJECTS/GEP00001/geneditid_plots/impacts.html`
+  - Scores on plate: `GenEditID/PROJECTS/GEP00001/geneditid_plots/koscores.html`
+  - Targeted search: `GenEditID/PROJECTS/GEP00001/geneditid_plots/targeted_search.html`
 
 
 ### :memo: Three real data projects to analyse if you wish

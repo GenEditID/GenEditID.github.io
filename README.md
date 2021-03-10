@@ -20,7 +20,7 @@ GenEditID is a flexible, open-access workflow to facilitate the identification o
 - Anne Pajon [@pajanne](https://github.com/pajanne)
 - Amy Smith [@smith04](https://github.com/smith04)
 - Anna-Maria Siegert [@Annemuh](https://github.com/Annemuh)
-- Loraine Tung
+- Loraine Tung [@lyct2python](https://github.com/lyct2python)
 
 
 
