@@ -92,6 +92,7 @@ Turn off sleep mode on your computer for analysis to run smoothly.
   - Scores on plate: `GenEditID/PROJECTS/GEPID/geneditid_plots/koscores.html`
   - Targeted search: `GenEditID/PROJECTS/GEPID/geneditid_plots/targeted_search.html` (if targeted search submitted)
 
+- If you wish to change the weighting score given to each consequence, you can do so by editing the `GenEditID/python/geneditid/consequences.csv` file (save it back as a csv file) before visualising your results and restarting the GenEditID WebApp.
 
 ## :speech_balloon: Ask a question
 
