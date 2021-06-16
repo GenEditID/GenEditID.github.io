@@ -72,6 +72,11 @@ Turn off sleep mode on your computer for analysis to run smoothly.
   geneditid_run_amplicount --abundance=10
   ```
   by default, it is set to 60 reads.
+  - To change the quality threshold for average phred quality across a window over the amplicon sequence run
+  ```
+  geneditid_run_amplicount --quality=5
+  ```
+  by default, it is set to 10.
   - To reverse complement all reads, run
   ```
   geneditid_run_amplicount --reverse
@@ -80,6 +85,8 @@ Turn off sleep mode on your computer for analysis to run smoothly.
 ## :four: Visualise results
 
 - View the output of the analysis in the output result file `GenEditID/PROJECTS/GEPID/amplicount.csv` and `GenEditID/PROJECTS/GEPID/amplicount_tsearch.csv` (if targeted search submitted)
+
+- If you wish to change the weighting score given to each consequence, you can do so by editing the `GenEditID/python/geneditid/consequences.csv` file (save it as a csv file) before visualising your results.
 
 - Restart GenEditID WebApp: first stop the WebApp started previously by typing **Ctrl-C** in the terminal where it was ran, and re-run
 ```
@@ -91,8 +98,6 @@ Turn off sleep mode on your computer for analysis to run smoothly.
   - Variants impact frequency: `GenEditID/PROJECTS/GEPID/geneditid_plots/impacts.html`
   - Scores on plate: `GenEditID/PROJECTS/GEPID/geneditid_plots/koscores.html`
   - Targeted search: `GenEditID/PROJECTS/GEPID/geneditid_plots/targeted_search.html` (if targeted search submitted)
-
-- If you wish to change the weighting score given to each consequence, you can do so by editing the `GenEditID/python/geneditid/consequences.csv` file (save it back as a csv file) before visualising your results and restarting the GenEditID WebApp.
 
 ## :speech_balloon: Ask a question
 
